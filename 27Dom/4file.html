@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-4</title>
+</head>
+<body style="background-color: #212121;color:#ffff">
+    <ul class="language">
+        <li>javaacript</li>
+    </ul>
+    
+</body>
+<script>
+
+    function addLanguage(lang){
+        const li=document.createElement("li");
+        li.innerHTML=`${lang}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("java")
+
+    function addOptiLang(lang){
+        const list=document.createElement("li");
+        list.appendChild(document.createTextNode(lang))
+        document.querySelector(".language").appendChild(list);//this is good approach
+    }
+    addOptiLang("HTML")
+    addOptiLang("CSS");
+
+    //Edit Value
+    const secondlang=document.querySelector("li:nth-child(2)");
+   // secondlang.innerHTML="MOJO"
+    const li=document.createElement("li")
+    li.textContent="Ruby";
+    secondlang.replaceWith(li);
+
+    const fisrtlang=document.querySelector("li:first-child")
+   fisrtlang.outerHTML="<li>JAVASCRIPT</li>"
+
+
+   //REMOVE
+   const lastlang=document.querySelector("li:nth-child(3)")
+   lastlang.remove();
+
+</script>
+</html>
