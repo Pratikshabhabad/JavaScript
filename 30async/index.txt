@@ -1,0 +1,27 @@
+notes only
+
+js-synchronous-one after another execution
+single threaded-slow-but not feel- single js engine not found-it get with runtime env.
+(default behaviour)
+
+
+execution context-
+* line by line execution
+* call stack -memory heap
+
+blocking code - non blocking code
+*blocking code
+block the flow
+read file sync
+
+*non blocking
+does not block code
+read file async
+
+
+**diagram
+js engine-memory heap+ call stack
+web api -inside browser-access to dom 
+task queue
+promises-high priority queue/promises queue
+1)

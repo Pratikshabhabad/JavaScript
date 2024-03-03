@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/l5h2xe80/kurta/x/6/n/xl-kast-tile-green-majestic-man-original-imagg4z33hu4kzpv.jpeg?q=70" alt="grey" id="grey" width="200px"></li>
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/l/f/r/xl-k-spl668-yellow-sg-leman-original-imagznqcrahgq9rf.jpeg?q=70" alt="kurta" id="kurta" width="200px"></li>
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/g/6/k/m-sksh-dt1105-pcbl-fubar-original-imafux247zhqym2z-bb.jpeg?q=70" alt=""onclick="alert('Blue Shirt')"  id="blue" width="200px"></li><!--this approach is not good of onclick event below in script there is better approach-->
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/i/v/x/xxl-br-ad-kt-105-adwyn-peter-original-imagj4zyd2q7t6cg.jpeg?q=70" alt="white" id="white" width="200px"></li>
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/l5h2xe80/kurta/x/6/n/xl-kast-tile-green-majestic-man-original-imagg4z33hu4kzpv.jpeg?q=70" alt="shirt" id="shirt" width="200px"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.parentNode)
+    let removeIt=e.target.parentNode;
+
+    if(e.target.tagName==='IMG')
+    {
+        console.log(e.target.id)
+        removeIt.remove();
+    }
+    //removeIt.remove();//1 method for remove
+  //  removeIt.parentNode.removeChild(removeIt)//this is 2)
+},false)
+</script>
+    
+</body>
+</html>

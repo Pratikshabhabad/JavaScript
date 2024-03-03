@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTs</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/l5h2xe80/kurta/x/6/n/xl-kast-tile-green-majestic-man-original-imagg4z33hu4kzpv.jpeg?q=70" alt="grey" id="grey" width="200px"></li>
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/l/f/r/xl-k-spl668-yellow-sg-leman-original-imagznqcrahgq9rf.jpeg?q=70" alt="kurta" id="kurta" width="200px"></li>
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/g/6/k/m-sksh-dt1105-pcbl-fubar-original-imafux247zhqym2z-bb.jpeg?q=70" alt=""onclick="alert('Blue Shirt')"  id="blue" width="200px"></li><!--this approach is not good of onclick event below in script there is better approach-->
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/i/v/x/xxl-br-ad-kt-105-adwyn-peter-original-imagj4zyd2q7t6cg.jpeg?q=70" alt="white" id="white" width="200px"></li>
+            <li><img src="https://rukminim1.flixcart.com/image/612/612/l5h2xe80/kurta/x/6/n/xl-kast-tile-green-majestic-man-original-imagg4z33hu4kzpv.jpeg?q=70" alt="shirt" id="shirt" width="200px"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //2 method 
+ //document.getElementById('kurta').onclick=function(){
+   //     alert("Kurta ")
+   // }  // this is also not good approach because onclick is working on id so it is giving less functionality
+
+
+     //3 method 
+  document.querySelector("#kurta").addEventListener('click',function(){
+    alert("kurta yellow")
+   },false)//in eventlistner there is third parameter which is bydefault always false-
+   
+
+     //4 method  attachEvent()- earlier  use for browser
+//5 jQuery- onEventListner-  earlier use
+
+
+document.getElementById('white').addEventListener('click',function(e){
+    console.log(e)
+},true)//here we change true but no differnce on console
+//EVent propogation-1)false se in market -event bubbling- inner element first then outer,2)true-event capturing-outer first then inner
+
+document.getElementById('images').addEventListener('click',function(e){
+    console.log("url click")
+},true)//here only this 
+
+document.getElementById('shirt').addEventListener('click',function(e){
+    console.log('last images')
+    e.stopPropagation()//this keeps separate i.e it will print only this line not above url event
+},true)//here both will activate if at both places there is false then first last images ,url click will print
+//so thats why here is bubbling up happen small elements first then large 
+
+document.getElementById('google').addEventListener('click',function(e){
+    e.preventDefault()
+    e.stopPropagation()//this will stop
+    console.log("google click")//when u click con google url click event and google click also print
+    
+    
+},false)
+
+
+
+//important topics= event types,timestamp,defaultPrevented,
+//target, toElement ,srcElement, currentTarget
+//clientX, clientY,screenX,screenY --for interview perspective
+//altkey,ctrlkey,shiftkey,keycode
+
+
+</script>
+</html>
+<!--   js is sequentially run language
+
+    -->

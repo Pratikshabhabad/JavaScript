@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai and js</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+   // let cnt=1;
+    //setInterval(function()
+   // { 
+     //   console.log("pratiksha"+cnt)
+      //  cnt++;
+  //  },1000) 
+
+
+    const sayDate=function(str)
+    { 
+        console.log(str,Date.now())
+      
+    }
+  const interwal=  setInterval(sayDate,1000,"hii")
+  clearInterval(interwal)//never run function
+</script>
+</html>

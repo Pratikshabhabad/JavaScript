@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //setTimeout(function(){
+    //    console.log("pratiksha")
+    //},2000)//asked for fixed time 
+
+    const sayHello=function()
+    {
+        console.log("hiii")
+    }
+  const  changeText=function()
+  {
+    document.querySelector("h1").textContent="best series in world"
+  }
+
+   // setTimeout(changeText,2000)
+
+   const changeMe=setTimeout(changeText,2000)
+
+   //by below event we stopped change the text by cleartimeout function
+   document.querySelector('#stop').addEventListener("click",function(){
+    clearTimeout(changeMe)
+    console.log("stoppedd..")
+   },false)
+</script>
+</html>
